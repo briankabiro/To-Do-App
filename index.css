@@ -1,0 +1,15 @@
+.wrapper{
+	display:flex;
+	justify-content:center;
+}
+#app{
+	margin-top:2em;
+	background-color: aliceblue;
+	height:40vh;
+	width:40vw;
+	display: flex;
+	justify-content: center; 
+}
+form{
+	margin-top: 2em;
+}
