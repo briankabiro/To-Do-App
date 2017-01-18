@@ -6,17 +6,22 @@
 		<title>Vue JS Todo App</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
+
 	<body>
 	<script src="vue.js"></script>
+		
 		<div class="wrapper">
 			<div id="app">
 				<form>
-					<input placeholder="Write todo here" type="text" name="todo-input-area" autofocus="true">
-					<button>Add Todo</button>
+					<input v-model="todoText" placeholder="Write todo here" type="text" name="todo-input-area" autofocus="true">
+
+					<button @click="addTodo">Add Todo</button>
 				</form>
+				<todo-item v:for="item in todos" v-bind:todo="item"></todo-item>
 			</div>
 		</div>
 
 	<script src="index.js"></script>
 	</body>
+	
 </html>
