@@ -13,11 +13,12 @@
 		<div class="wrapper">
 			<div id="app">
 				<form>
-					<input v-model="todoText" placeholder="Write todo here" type="text" name="todo-input-area" autofocus="true">
+					<input v-model="todoText" placeholder="Write todo here" type="text" autofocus="true">
 
-					<button @click="addTodo">Add Todo</button>
+					<button @click.submit.prevent="addTodo">Add Todo</button>
 				</form>
-				<todo-item v:for="item in todos" v-bind:todo="item"></todo-item>
+				<todo-item v-for="item in todos" v-bind:todo='item'></todo-item>
+				
 			</div>
 		</div>
 
