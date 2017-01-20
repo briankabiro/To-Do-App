@@ -3,16 +3,27 @@ when button clicked, add words in input box to todos
  */
 Vue.component('todo-item', {
 	props:['todo'],
-	template:'<div>{{todo.text}}</div>'
+	template:'<div v:bind:style="todoStyleObject">{{todo.text}}<button v-bind:style="divStyleObject"></button></div>',
+	data(){
+		return{
+			divStyleObject:{
+				height:'1.5em',
+				width:'1.5em',
+				backgroundColor:this.background,
+				borderRadius:'100%',
+				border:'none',
+				marginLeft:'1em'
+			}
+		}
+		
+	}
 })
 
 var app = new Vue({
 	el:"#app",
 	data:{
 		todos:[
-			{text: "John Mbad" },
-			{text: "Perter Hosi" },
-			{text: "Salazar Snape" }
+
 		],
 		todoText:""
 	},
