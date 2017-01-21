@@ -19,7 +19,14 @@
 					<button @click.submit.prevent="addTodo">Add Todo</button>
 				</form>
 				
-				<todo-item v-for="item in todos" v-bind:todo='item'></todo-item>
+				<div v-for="todo, index in todos">
+					<label>
+						<input type="checkbox" 
+						v-model="todo.completed"
+						v-on:change='toggleCompleted(todo)'
+						/>{{todo.text}}
+					</label>
+				</div>
 				
 			</div>
 		</div>
